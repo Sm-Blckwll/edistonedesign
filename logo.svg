@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-47.6055,-50.9978)">
+        <g id="logo" transform="matrix(1,0,0,1,-540.695,-25.4501)">
+            <rect x="588.3" y="76.448" width="199.459" height="199.459"/>
+            <g transform="matrix(1,0,0,1,-20.2218,21.335)">
+                <text x="624.439px" y="187.645px" style="font-family:'BasicSansNarrow-BlackIt', 'BasicSans Narrow';font-weight:900;font-style:italic;font-size:45px;fill:white;">E<tspan x="646.849px " y="187.645px ">d</tspan>is<tspan x="703.414px 721.594px " y="187.645px 187.645px ">to</tspan>ne</text>
+                <text x="624.439px" y="232.645px" style="font-family:'BasicSansNarrow-BlackIt', 'BasicSans Narrow';font-weight:900;font-style:italic;font-size:45px;fill:white;">Design</text>
+            </g>
+        </g>
+    </g>
+</svg>
