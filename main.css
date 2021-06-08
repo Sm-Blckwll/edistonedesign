@@ -27,14 +27,40 @@
 	font-weight: 100;
   }
 
+:root {
+	--yellow: #ffc759ff;
+	--pink: #ff7b9cff;
+	--blue: #607196ff;
+	--light-blue: #babfd1ff;
+	--white: rgb(252, 252, 252);
+}
+  
+.top {
+	height: 70vh;
+	background-color: var(--blue);
+	clip-path: polygon(0 0, 100% 0, 100% 40vh, 100% 60%, 0 40vh);
+	margin: 0px;
+	padding-top: 6rem;
+	width: 100%;
+}
+
 body {
     min-height: 100%;
       color: #020814;
       font-family: 'BasicSans', sans-serif;
-      margin: 0;
-      background: #ffffff;
-      margin: 1rem 1rem 1rem 1rem;
+      margin: 0px;
+      background: var(--white);
+      
   }
+
+.underline {
+	position: relative;
+	top: -1.5rem;
+	z-index: -1;
+	background-color: var(--pink);
+	height: 1rem;
+	width: 19rem;
+}
 
 .logo {
 	display: flex;
@@ -47,21 +73,21 @@ body {
 	font-weight: 800 !important;
     display: flex;
     justify-content: space-between;
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
-    font-size: 6rem;
+    margin-top: 0;
+    
+    font-size: calc(72rem/14);
     font-weight: 700;
-    color: #000000;
+    color: var(--white);
     letter-spacing: 0px;
     line-height: 1.1;
-	padding-top: 6rem;
-	padding-left: 1rem;
+	
 	max-width: 100%;
   }
 
 .cta {
 	font-family: 'BasicSans';
 	font-weight: 300;
+	margin-top: 2rem;
 	margin-left: 1rem;
 	font-size: 1rem;
 	background-color: #fff;
