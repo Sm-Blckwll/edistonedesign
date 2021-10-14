@@ -28,12 +28,12 @@
   }
 
 :root {
-	--yellow: #ffc759ff;
+	--yellow: rgb(160, 63, 95);
 	--pink: #ff7b9cff;
-	--blue: rgb(123, 125, 255);
+	--blue: rgb(68, 68, 68);
 	--grey: rgb(124, 124, 124);
 	--black: rgb(36, 36, 36);
-	--white: rgb(255, 255, 255);
+	--white: rgb(252, 252, 252);
 }
   
 .top {
@@ -91,23 +91,23 @@ body {
 .blurb {
 	font-weight: 300;
 	font-size: 1rem;
-	margin-top: 2em;
+	margin-top: 3em;
 	color: var(--grey);
-	max-width: 75%;
+	max-width: 50%;
 }
 
 .cta {
 	
 	font-weight: 600;
 	margin-top: 2rem;
-	
+	margin-left: .5rem;
 	font-size: 1rem;
 	color: var(--white);
 	background-color: var(--yellow);
 	border: 1px solid;
 	border-radius: 25px;
 	border-color: var(--yellow);
-	padding: 20px 100px 20px 100px;
+	padding: 15px 80px 15px 80px;
 }
 
 .cta:hover {
@@ -129,7 +129,10 @@ body {
     margin-top: 6rem;
 }
 
-
+.highlight {
+	font-weight: 600;
+	background: linear-gradient(180deg,rgba(255,255,255,0) 50%, hsl(59, 100%, 72%) 50%);
+}
 
 .box {
 	background-color:var(--white);
@@ -159,3 +162,14 @@ body {
 	padding-top: 45%;
 }
 
+@media screen and (max-width: 1229px){
+	.blurb{
+		max-width: 32rem;
+	}
+}
+
+@media screen and (max-width: 900px){ 
+	.back-gn {
+		display: none;
+	}
+}
