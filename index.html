@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Edistone Design, a creative design agency and National Trust supplier.">
+    <meta name="keywords" content="Design, Edistone, National Trust supplier, graphics, illustration.">
     <title>Edistone Design</title>
 
     <style>
@@ -17,11 +19,22 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src https:; script-src https: 'unsafe-inline'; style-src https: 'unsafe-inline'">
+
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("H66KIGNHU4VVEVtMD");
+        })();
+    </script>
+
+
 
     <script>
         if ("serviceWorker" in navigator) {
@@ -49,27 +62,28 @@
     <section class="main-grid">
         <div></div>
         <div id="content">
+            <div class="cookies">This site uses cookies for core functionality only - We do not store any user data.</div>
             <div class="top">
-                <p class="top-p">Let us provide</p>
+                <p class="top-p">🦖 Let us provide you with</p>
                 <div class="outputTitle" id="output">graphic design solutions for your business or charity</div>
                 <p>From interpretation displays, to expressive media strategies and beyond. We are National Trust suppliers with a passion for sustainable design.</p>
                 <!--<a onclick="doodoo()" id="pick" class="link">random ✔️</a>-->
             </div>
             <div class="tab">
                 <button class="tablinks left" onclick="openTab(event, 'watercolour')"
-                    style="background-image: url(images/brushes.jpg); background-size: cover; background-position: 65%;">
+                    style="background-image: url(images/brushes.webp); background-size: cover; background-position: 65%;">
                     <div class="tablink-text-bg">
                         <span>Watercolour</span>
                     </div>
                 </button>
                 <button class="tablinks mid" onclick="openTab(event, 'computer')"
-                    style="background-image: url(images/computer.jpg); background-size: cover; background-position: 55%;">
+                    style="background-image: url(images/computer.webp); background-size: cover; background-position: 55%;">
                     <div class="tablink-text-bg">
                         <span>Computer illustration</span>
                     </div>
                 </button>
                 <button class="tablinks right" onclick="openTab(event, 'simple')"
-                    style="background-image: url(images/simple.jpg); background-size: cover; background-position: 78%;">
+                    style="background-image: url(images/simple.webp); background-size: cover; background-position: 78%;">
                     <div class="tablink-text-bg">
                         <span>Simple layouts</span>
                     </div>
@@ -81,10 +95,10 @@
 
                 <section class="hero-grid">
                     <div class="card panel">
-                        <img class="filler" src="images/margins-sign.jpg">
+                        <img class="filler" src="images/white.png">
                     </div>
                     <div class="card panel tall-panel">
-                        <img class="filler" src="images/Watersmeet_Wood_Pasture_Meat_Poster.png">
+                        <img class="filler" src="images/white.png">
                     </div>
                     <div class="card panel">
                         <img class="filler " src="images/white.png">
@@ -96,6 +110,15 @@
                         <img class="filler " src="images/white.png">
                     </div>
                     <div class="card panel tall-panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
                         <img class="filler " src="images/white.png">
                     </div>
                     <div class="card panel">
@@ -128,6 +151,15 @@
                     <div class="card panel tall-panel">
                         <img class="filler " src="images/white.png">
                     </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
                 </section>
             </div>
 
@@ -155,16 +187,41 @@
                     <div class="card panel">
                         <img class="filler " src="images/white.png">
                     </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
                 </section>
             </div>
         </section>
     <section class="main-grid">
         <div></div>
-        <div class="bot-null">
+        <div class="bot" id="content">
+            <div class="top-p" id="output">Get in touch</div>
+            <p>We'd love to hear of your plans! Let us make them a reality, and send us a message. 😊</p>
+            <div class="bot-null">
+                <div class="contact" id="contact">Contact</div>
+                    <div id="contactForm">
+                    <h1>Tell us about your project</h1>
+                    <small>I'll get back to you as quickly as possible</small>
+                    <form id="form">
+                        <input name="user_name" id="user_name" placeholder="Name" type="text" required oninvalid="this.setCustomValidity('Please enter your name')" oninput="setCustomValidity('')"/>
+                        <input name="user_email" id="user_email" placeholder="Email" type="email" required oninvalid="this.setCustomValidity('Please enter valid email')" oninput="setCustomValidity('')"/>
+                        <input name="user_subject" id="user_subject" placeholder="Subject" type="text" required oninvalid="this.setCustomValidity('Please enter an email subject')" oninput="setCustomValidity('')"/>
+                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                        <input class="formBtn" id="button" type="submit" value="Send Email"/>
+                    </form>
+                    </div>
+                    <div class="banner"><h1 class="emoji">📨</h1><h1>Email sent!</h1><small>We look forward to working with you.</small></div>
+            </div>
+            <div></div>
         </div>
-        <div></div>
     </section>
-
 
     <div class="loader-wrapper">
         <span class="loader">
@@ -175,6 +232,39 @@
 
     </div>
     </div>
+    <script type="text/javascript">
+        const sent = 1;
+        const btn = document.getElementById('button');
+
+        document.getElementById('form')
+        .addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        btn.value = 'Sending...';
+        var sent = 0
+        setTimeout(function () {$('.banner').fadeToggle();}, 800);
+
+        const serviceID = 'default_service';
+        const templateID = 'contact_form';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+            btn.value = 'Send Email';
+            }, (err) => {
+            btn.value = 'Send Email';
+            alert(JSON.stringify(err));
+            });
+        });
+            $(document).mouseup(function (e) {
+                var container = $(".banner");
+
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    && container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    container.fadeOut();
+                }
+                });
+    </script>
     <script>
 
         $(window).on("load", function () {
@@ -204,34 +294,23 @@
 
         }
 
+        $(function() {
+            // contact form animations
+            $('#contact').click(function() {
+                $('#contactForm').fadeToggle();
+            })
+            $(document).mouseup(function (e) {
+                var container = $("#contactForm");
 
-        var picked, heroList;
-        var time = 0;
-
-        function doodoo() {
-            var time = 0;
-            for (i = 0; i < 7; i++) {
-                var heroList = document.getElementsByClassName("tog");
-                let picked = heroList[Math.floor(Math.random() * heroList.length + i)];
-                time = time + 150;
-                timeoutID = setTimeout(function () { document.getElementById('output').innerHTML = picked.id; }, time);
-            }
-        }
-
-        function toggle(x, heroName) {
-            var hero;
-            hero = document.getElementById(heroName);
-            if (document.getElementById(heroName).style.opacity === "1") {
-                document.getElementById(heroName).style.opacity = ".3";
-                document.getElementById(heroName).className = document.getElementById(heroName).className.replace(" tog", "");
-            } else {
-                document.getElementById(heroName).style.opacity = "1"
-                document.getElementById(heroName).className += " tog";
-            }
-        }
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    && container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    container.fadeOut();
+                }
+                });
+            });
     </script>
     </div>
     </div>
 </body>
-
 </html>

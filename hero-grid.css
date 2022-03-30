@@ -14,7 +14,7 @@
     display: grid;
     min-height: 100%;
     grid-template-columns: 10% 80% 10%;
-    justify-items: center;
+    justify-items: left;
   }
 }
 
