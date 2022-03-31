@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Edistone Design, a creative design agency and National Trust supplier.">
     <meta name="keywords" content="Design, Edistone, National Trust supplier, graphics, illustration.">
     <title>Edistone Design</title>
-
+    <header Content-Security-Policy-Report-Only: default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'></header>
     <style>
         @import url('./base.css');
         @import url('./hero-grid.css');
@@ -19,8 +19,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-    <meta http-equiv="Content-Security-Policy" content="default-src https:; script-src https: 'unsafe-inline'; style-src https: 'unsafe-inline'">
 
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#000000">
@@ -58,13 +56,12 @@
         <div class="loader-section section-right"></div>
 
     </div>
-
+    <div class="cookies"><div class="emoji-small">🍪 </div><div class="cookies-text">This site uses cookies for core functionality only - We do not store any user data.</div><div class="close" onclick="closewindow()">X</div></div>
     <section class="main-grid">
         <div></div>
         <div id="content">
-            <div class="cookies">This site uses cookies for core functionality only - We do not store any user data.</div>
             <div class="top">
-                <p class="top-p">🦖 Let us provide you with</p>
+                <p class="top-p">Let us provide you with</p>
                 <div class="outputTitle" id="output">graphic design solutions for your business or charity</div>
                 <p>From interpretation displays, to expressive media strategies and beyond. We are National Trust suppliers with a passion for sustainable design.</p>
                 <!--<a onclick="doodoo()" id="pick" class="link">random ✔️</a>-->
@@ -109,21 +106,6 @@
                     <div class="card panel">
                         <img class="filler " src="images/white.png">
                     </div>
-                    <div class="card panel tall-panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
                 </section>
             </div>
 
@@ -140,21 +122,6 @@
                         <img class="filler " src="images/white.png">
                     </div>
                     <div class="card panel tall-panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel tall-panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
                         <img class="filler " src="images/white.png">
                     </div>
                     <div class="card panel">
@@ -181,24 +148,10 @@
                     <div class="card panel tall-panel">
                         <img class="filler " src="images/white.png">
                     </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
                 </section>
             </div>
         </section>
+
     <section class="main-grid">
         <div></div>
         <div class="bot" id="content">
@@ -216,12 +169,24 @@
                         <textarea name="message" id="message" placeholder="Message"></textarea>
                         <input class="formBtn" id="button" type="submit" value="Send Email"/>
                     </form>
+                    <span class="close-popup" onclick="popup()">X</span>
                     </div>
                     <div class="banner"><h1 class="emoji">📨</h1><h1>Email sent!</h1><small>We look forward to working with you.</small></div>
             </div>
-            <div></div>
         </div>
+        <div></div>
     </section>
+    <div class="about-us">
+        <div class="about-picture"></div>
+        <div class="top-p">About Us</div>
+        <p style="text-align: center;">👋 <b>Hi there!</b> Our team is based on the beautiful North Devon coastline. The inspiration for our work is by both modern, and classic design principles, and <b>we'd love to work with you on your next project.🎉</b></p>
+    </div>
+
+
+
+
+
+
 
     <div class="loader-wrapper">
         <span class="loader">
@@ -232,6 +197,10 @@
 
     </div>
     </div>
+
+
+
+
     <script type="text/javascript">
         const sent = 1;
         const btn = document.getElementById('button');
@@ -292,6 +261,14 @@
                 evt.currentTarget.className += " active";
             }
 
+        }
+
+        function closewindow() {
+            $('.cookies').fadeToggle();
+        }
+
+        function popup() {
+            $('#contactForm').fadeToggle();
         }
 
         $(function() {
