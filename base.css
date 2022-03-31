@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 :root {
-  --accent-color-light: #4dec95;
-  --accent-color: #2ed67a;
-  --accent-color-dark: #23b866;
+  --accent-color-light: #6be772;
+  --accent-color: #4ed354;
+  --accent-color-dark: #45ad4b;
 }
 
 body::-webkit-scrollbar {
@@ -43,6 +43,7 @@ p {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  transition: background-position 0.5s ease-out;
 }
 
 .top-p {
@@ -50,6 +51,18 @@ p {
   font-weight: 700;
   font-size: 1.5em;
   color: var(--accent-color);
+  user-select: none;
+}
+
+.outputTitle a {
+  background: linear-gradient(to right, rgba(0,0,0,0) 50%, var(--accent-color) 50%);
+  background-position: -0% 0;
+  background-size: 200% auto;
+  transition: background-position 0.5s ease-out;
+}
+
+.outputTitle:hover a {
+  background-position: -99.99% 0;
 }
 
 span {
@@ -205,14 +218,14 @@ span {
     position: relative;
     flex-wrap: no-wrap;
     max-width: 325px;
-    gap: .5em;
+    gap: 0.5em;
   }
 
   .tablink-text-bg {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding: 0px 0px 1.5em 0px!important;
+    padding: 0px 0px 1.5em 0px !important;
   }
 }
 
@@ -227,9 +240,8 @@ span {
   letter-spacing: 0px;
   line-height: 1.1;
   animation: outputTitle 1s;
+  user-select: none;
 }
-
-
 
 .Title {
   display: flex;
