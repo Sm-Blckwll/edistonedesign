@@ -202,7 +202,17 @@ span {
 
 @media screen and (max-width: 600px) {
   .tab {
-    flex-wrap: wrap;
+    position: relative;
+    flex-wrap: no-wrap;
+    max-width: 325px;
+    gap: .5em;
+  }
+
+  .tablink-text-bg {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px 0px 1.5em 0px!important;
   }
 }
 
