@@ -1,74 +1,32 @@
-
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
-
-html{overflow-x: hidden;}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 body {
   min-width: 390px;
   width: auto !important;
   min-height: 100%;
-    color: #020814;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    background: #ffffff;
-
-}
-
-.cookies {
-  position: absolute;
-  left: 50%;
-  margin-left: -48%;
-  width: 95vw;
-  display: flex;
-  user-select: none;
-  background-color: #eb445a;
-  color: #f7f7ff;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  font-size: 14px;
-  font-style: italic;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-
-.cookies-text {
-  max-width: fit-content;
-}
-
-.emoji-small {
-  font-style: normal;
-  padding-right: 1rem;
-}
-
-.close {
-  float: right;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  font-style: normal;
-  transition: all 200ms ease;
-  -webkit-transition: all 200ms ease;
-  -moz-transition: all 200ms ease;
-  -ms-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  cursor: pointer;
+  color: #020814;
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  background: #ffffff;
 }
 
 p {
-  color: #73849a;
+  color: #636363;
   font-size: 1.2em;
-    margin-bottom: 1.2em;
-    max-width: 400px;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+  margin-bottom: 1.2em;
+  max-width: 400px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.top-p {
+  margin-bottom: 0px;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #352dab;
 }
 
 span {
@@ -76,234 +34,345 @@ span {
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    color: rgb(0, 0, 0);
-    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-    height: 100%;
-    width: 100%;
-    border-radius: 4px;
-    transition: all 500ms;
-    overflow: hidden;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
- }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: rgb(0, 0, 0);
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .card:hover {
-    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-    transform: translateY(-3px) scale(1.05);
- }
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+    rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.05);
+}
 
- .top {
-   margin-top: 7rem;
-   margin-left: 1rem;
-   margin-bottom: 2rem;
- }
+.top {
+  margin-top: 7rem;
+  margin-left: 0rem;
+  margin-bottom: 2rem;
+}
 
- .bot {
+.bot {
   margin-top: 18rem;
   margin-left: 1rem;
   margin-bottom: 2rem;
 }
 
-
-
 .link {
-  color:royalblue;
+  color: royalblue;
   font-size: 1.7rem;
   cursor: pointer;
 }
 
 .filler {
-  cursor:pointer;
+  cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 .link:active {
-  color:rgb(169, 50, 224);
+  color: rgb(169, 50, 224);
   text-decoration: underline;
   cursor: grabbing;
 }
 
-  * {
-    box-sizing: border-box;
-  }
-  /* Style the tab */
-.tab {
-    overflow: hidden;
-    margin-left: 1em;
-    background-color: #ffffff00;
-    margin: auto;
-  }
+* {
+  box-sizing: border-box;
+}
 
- .outputTitle {
+.tab {
+  display: flex;
+  gap: 1em;
+  overflow: hidden;
+  background-color: #ffffff00;
+  margin: auto;
+}
+
+.outputTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  padding-top: 0px;
+  font-weight: 900;
+  color: #020814;
+  letter-spacing: 0px;
+  line-height: 1.1;
+  animation: outputTitle 1s;
+}
+
+.clients {
+  background: #242f3f;
+  padding: 1rem;
+}
+
+.logo {
+  background-image: url(images/NTV_E_MO_B_S_C.png);
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+.clients-text {
+  font-size: 1em;
+  color: #020814;
+}
+
+@media screen and (max-width: 800px) {
+  .outputTitle {
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: 3.5rem;
+    font-size: 2rem;
     padding-top: 0px;
     font-weight: 700;
     color: #020814;
     letter-spacing: 0px;
     line-height: 1.1;
-    animation: outputTitle 1s ;
+    animation: outputTitle 1s;
   }
+}
 
-  @media screen and (max-width: 800px){
-    .outputTitle {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 3.3rem;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      padding-top: 0px;
-      font-weight: 700;
-      color: #020814;
-      letter-spacing: 0px;
-      line-height: 1.1;
-      animation: outputTitle 1s ;
-    }
+/* Style the buttons inside the tab */
+.tablinks {
+  margin-left: 0em;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8rem 0 0;
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 100ms ease;
+  -webkit-transition: transform 100ms ease;
+  -moz-transition: transform 100ms ease;
+  -ms-transition: transform 100ms ease;
+  -o-transition: transform 100ms ease;
+}
+
+
+.tab button:hover {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+
+.tab button.active {
+  border-color: #352DAB;
+  border: 2px 2px;
+  border-style: solid;
+}
+
+/* Change background color of buttons on hover
+.tab button:hover {
+  background-color: #ec6f7f;
+}
+
+/* Create an active/current tablink class
+.tab button.active {
+  background-color: #9e3a47;
+}*/
+
+.tablink-text-bg {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(
+    hsl(0 0% 10% / 0),
+    hsl(0 0% 10% / 0.2) 15%,
+    hsl(0 0% 10% / 1)
+  );
+  height: 120%;
+}
+
+.tablink-title {
+  position: relative;
+  width: max-content;
+  color: #fff;
+  margin: auto;
+  font-size: 1em;
+  font-weight: 400 !important;
+}
+
+/* Style the tab content */
+.tabcontent {
+  background-color: #f7f7ff;
+  display: none;
+  width: 100%;
+  padding: 1em 1em;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: -1px 1px 25px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: -1px 1px 25px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: -1px 1px 25px 1px rgba(0, 0, 0, 0.25);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(269deg, #309e82, #845398);
+  background-size: 400% 400%;
+
+  -webkit-animation: backColour 31s ease infinite;
+  -moz-animation: backColour 31s ease infinite;
+  -o-animation: backColour 31s ease infinite;
+  animation: backColour 31s ease infinite;
+}
+
+.loader {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  border: -11px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  animation: loader 5s infinite;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  border: 11px solid rgb(255, 255, 255);
+  background: linear-gradient(269deg, #309e82, #845398);
+  background-size: 400% 400%;
+
+  -webkit-animation: backColour 31s ease infinite;
+  -moz-animation: backColour 31s ease infinite;
+  -o-animation: backColour 31s ease infinite;
+  animation: backColour 31s ease infinite;
+  border-radius: 50%;
+  animation: loader-inner reverse 5s infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
   }
-
-
-
-  /* Style the buttons inside the tab */
-  .button {
-    margin-left: 1em;
-    background-color:#eb445a;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    border-radius: 10px;
-    margin-bottom: 2em;
+  25% {
+    transform: rotate(180deg);
   }
-
-  /* Change background color of buttons on hover */
-  .button:hover {
-    background-color: #ec6f7f;
+  50% {
+    transform: rotate(0deg);
   }
-
-  /* Create an active/current tablink class */
-  .button:active {
-    background-color:#9e3a47;
+  75% {
+    transform: rotate(360deg);
   }
-
-  /* Style the tab content */
-  .tabcontent {
-    background-color:#f7f7ff;
-    display: none;
-    width: 100%;
-    padding: 1em 1em 1em 1em;
-    border-radius: 8px;
-    margin-top: 2rem;
-    margin-right: 1em;
-    box-shadow: -1px 1px 25px 1px rgba(0,0,0,0.25);
-    -webkit-box-shadow: -1px 1px 25px 1px rgba(0,0,0,0.25);
-    -moz-box-shadow: -1px 1px 25px 1px rgba(0,0,0,0.25);
+  100% {
+    transform: rotate(0deg);
   }
+}
 
-
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:100%;
-    height:100%;
+@keyframes loader-inner {
+  0% {
+    transform: scale(0.25, 0.25);
   }
-  .loader-wrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #242f3f;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(269deg, #309e82, #845398);
-    background-size: 400% 400%;
-
-    -webkit-animation: backColour 31s ease infinite;
-    -moz-animation: backColour 31s ease infinite;
-    -o-animation: backColour 31s ease infinite;
-    animation: backColour 31s ease infinite;
+  25% {
+    transform: scale(0.75, 0.75);
   }
-  .loader {
-    display: inline-block;
-    width: 75px;
-    height: 75px;
-    position: relative;
-    border: -11px solid rgb(255, 255, 255);
-    border-radius: 50%;
-    animation: loader 5s infinite ;
+  50% {
+    transform: scale(0.25, 0.25);
   }
-
-  .loader-inner {
-    vertical-align: top;
-    display: inline-block;
-    width: 75px;
-    height: 75px;
-    position: relative;
-    border: 11px solid rgb(255, 255, 255);
-    background: linear-gradient(269deg, #309e82, #845398);
-    background-size: 400% 400%;
-
-    -webkit-animation: backColour 31s ease infinite;
-    -moz-animation: backColour 31s ease infinite;
-    -o-animation: backColour 31s ease infinite;
-    animation: backColour 31s ease infinite;
-    border-radius: 50%;
-    animation: loader-inner reverse 5s infinite ;
+  75% {
+    transform: scale(0.75, 0.75);
   }
-
-
-
-
-
-  @keyframes loader {
-    0% { transform:rotate(0deg);}
-    25% { transform:rotate(180deg);}
-    50% { transform:rotate(0deg);}
-    75% { transform:rotate(360deg);}
-    100% { transform:rotate(0deg);}
+  100% {
+    transform: scale(0.25, 0.25);
   }
-
-  @keyframes loader-inner {
-    0% { transform:scale(.25,.25);}
-    25% { transform:scale(.75,.75);}
-    50% { transform:scale(.25,.25);}
-    75% { transform:scale(.75,.75);}
-    100% { transform:scale(.25,.25);}
-  }
+}
 
 @-webkit-keyframes backColour {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes backColour {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-o-keyframes backColour {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes backColour {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+      transition-delay: 0ms !important;
+  }
 }

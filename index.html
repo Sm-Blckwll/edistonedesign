@@ -2,532 +2,236 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Random hero</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edistone Design</title>
 
-  <style>
-    @import url('./base.css');
-    @import url('./hero-grid.css');
-  </style>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url('./base.css');
+        @import url('./hero-grid.css');
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="manifest.json">
-<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-<meta name="apple-mobile-web-app-title" content="Random hero">
-<meta name="application-name" content="Random hero">
-<meta name="msapplication-TileColor" content="#5f19cb">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-<script>
-    if ("serviceWorker" in navigator) {
-    // register service worker
-    navigator.serviceWorker.register("service-worker.js")
-    .then(function (registration) {
-        console.log("success load");
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  }
-</script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            // register service worker
+            navigator.serviceWorker.register("service-worker.js")
+                .then(function (registration) {
+                    console.log("success load");
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+    </script>
 </head>
 
 <body>
-  <div id="loader-wrapper">
-    <div id="loader"></div>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
 
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
 
-  </div>
-
-  <section class="main-grid">
-    <div></div>
-    <div id="content">
-        <div class="cookies"><div class="emoji-small">🍪 </div><div class="cookies-text">This site uses cookies for core functionality only - We do not store any user data.</div><div class="close" onclick="closewindow()">X</div></div>
-      <div class="top">
-        <div class="outputTitle" id="output">Random hero picker</div>
-        <p>Press the buttons below to select/unselect all the heroes, or click on the heroes you don't want to random.</p>
-        <a onclick="doodoo()" id="pick" class="link">random ✔️</a>
-
-
-      </div>
-      <div class="tab">
-        <div class="button" onclick="selectAll()"><span>Select All</span></div>
-        <div class="button" onclick="deselectAll()"><span>Deselect All</span></div>
-      </div>
-    <section class="hero-grid">
-      <div class="card "><img class="filler tog" id="earthshaker" onclick="toggle(x, 'earthshaker')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/earthshaker_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="sven" onclick="toggle(x, 'sven')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/sven_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="tiny" onclick="toggle(x, 'tiny')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/tiny_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="kunkka" onclick="toggle(x, 'kunkka')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/kunkka_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="beastmaster" onclick="toggle(x, 'beastmaster')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/beastmaster_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="dragon_knight" onclick="toggle(x, 'dragon_knight')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/dragon_knight_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="clockwerk" onclick="toggle(x, 'clockwerk')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/rattletrap_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="omniknight" onclick="toggle(x, 'omniknight')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/omniknight_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="huskar" onclick="toggle(x, 'huskar')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/huskar_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="alchemist" onclick="toggle(x, 'alchemist')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/alchemist_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="brewmaster" onclick="toggle(x, 'brewmaster')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/brewmaster_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="treant_protector" onclick="toggle(x, 'treant_protector')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/treant_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="io" onclick="toggle(x, 'io')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/wisp_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="centaur_warrunner" onclick="toggle(x, 'centaur_warrunner')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/centaur_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="timbersaw" onclick="toggle(x, 'timbersaw')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/shredder_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="bristleback" onclick="toggle(x, 'bristleback')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/bristleback_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="tusk" onclick="toggle(x, 'tusk')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/tusk_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="elder_titan" onclick="toggle(x, 'elder_titan')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/elder_titan_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="legion_commander" onclick="toggle(x, 'legion_commander')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/legion_commander_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="earth_spirit" onclick="toggle(x, 'earth_spirit')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/earth_spirit_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="phoenix" onclick="toggle(x, 'phoenix')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/phoenix_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="mars" onclick="toggle(x, 'mars')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/mars_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="snapfire" onclick="toggle(x, 'snapfire')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/snapfire_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="axe" onclick="toggle(x, 'axe')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/axe_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="pudge" onclick="toggle(x, 'pudge')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/pudge_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="sand_king" onclick="toggle(x, 'sand_king')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/sand_king_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="slardar" onclick="toggle(x, 'slardar')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/slardar_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="tidehunter" onclick="toggle(x, 'tidehunter')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/tidehunter_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="wraith_king" onclick="toggle(x, 'wraith_king')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/skeleton_king_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="life_stealer" onclick="toggle(x, 'life_stealer')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/life_stealer_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="night_stalker" onclick="toggle(x, 'night_stalker')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/night_stalker_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="doom" onclick="toggle(x, 'doom')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/doom_bringer_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="spirit_breaker" onclick="toggle(x, 'spirit_breaker')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/spirit_breaker_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="lycan" onclick="toggle(x, 'lycan')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/lycan_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="chaos_knight" onclick="toggle(x, 'chaos_knight')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/chaos_knight_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="undying" onclick="toggle(x, 'undying')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/undying_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="magnus" onclick="toggle(x, 'magnus')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/magnataur_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="abaddon" onclick="toggle(x, 'abaddon')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/abaddon_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="underlord" onclick="toggle(x, 'underlord')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/abyssal_underlord_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="dawn_breaker" onclick="toggle(x, 'dawn_breaker')" style="opacity: 1;"
-        src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/dawnbreaker_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="primal_beast" onclick="toggle(x, 'primal_beast')" style="opacity: 1;"
-        src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/primal_beast_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="antimage" onclick="toggle(x, 'antimage')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/antimage_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="drow_ranger" onclick="toggle(x, 'drow_ranger')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/drow_ranger_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="juggernaut" onclick="toggle(x, 'juggernaut')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/juggernaut_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="mirana" onclick="toggle(x, 'mirana')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/mirana_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="morphling" onclick="toggle(x, 'morphling')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/morphling_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="phantom_lancer" onclick="toggle(x, 'phantom_lancer')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/phantom_lancer_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="vengefulspirit" onclick="toggle(x, 'vengefulspirit')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/vengefulspirit_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="riki" onclick="toggle(x, 'riki')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/riki_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="sniper" onclick="toggle(x, 'sniper')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/sniper_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="templar_assassin" onclick="toggle(x, 'templar_assassin')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/templar_assassin_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="luna" onclick="toggle(x, 'luna')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/luna_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="bounty_hunter" onclick="toggle(x, 'bounty_hunter')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/bounty_hunter_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="ursa" onclick="toggle(x, 'ursa')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/ursa_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="gyrocopter" onclick="toggle(x, 'gyrocopter')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/gyrocopter_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="lone_druid" onclick="toggle(x, 'lone_druid')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/lone_druid_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="naga_siren" onclick="toggle(x, 'naga_siren')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/naga_siren_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="troll_warlord" onclick="toggle(x, 'troll_warlord')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/troll_warlord_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="ember_spirit" onclick="toggle(x, 'ember_spirit')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/ember_spirit_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="monkey_king" onclick="toggle(x, 'monkey_king')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/monkey_king_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="pangolier" onclick="toggle(x, 'pangolier')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/pangolier_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="hoodwink" onclick="toggle(x, 'hoodwink')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/hoodwink_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="bloodseeker" onclick="toggle(x, 'bloodseeker')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/bloodseeker_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="shadow_fiend" onclick="toggle(x, 'shadow_fiend')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/nevermore_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="razor" onclick="toggle(x, 'razor')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/razor_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="venomancer" onclick="toggle(x, 'venomancer')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/venomancer_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="faceless_void" onclick="toggle(x, 'faceless_void')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/faceless_void_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="phantom_assassin" onclick="toggle(x, 'phantom_assassin')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/phantom_assassin_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="viper" onclick="toggle(x, 'viper')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/viper_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="clinkz" onclick="toggle(x, 'clinkz')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/clinkz_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="broodmother" onclick="toggle(x, 'broodmother')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/broodmother_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="weaver" onclick="toggle(x, 'weaver')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/weaver_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="spectre" onclick="toggle(x, 'spectre')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/spectre_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="meepo" onclick="toggle(x, 'meepo')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/meepo_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="nyx_assassin" onclick="toggle(x, 'nyx_assassin')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/nyx_assassin_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="slark" onclick="toggle(x, 'slark')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/slark_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="medusa" onclick="toggle(x, 'medusa')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/medusa_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="terrorblade" onclick="toggle(x, 'terrorblade')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/terrorblade_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="arc_warden" onclick="toggle(x, 'arc_warden')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/arc_warden_hphover.png?v=6324670">
-      </div>
-      <div class="card"><img class="filler tog" id="crystal_maiden" onclick="toggle(x, 'crystal_maiden')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/crystal_maiden_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="puck" onclick="toggle(x, 'puck')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/puck_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="storm_spirit" onclick="toggle(x, 'storm_spirit')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/storm_spirit_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="windranger" onclick="toggle(x, 'windranger')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/windrunner_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="zeus" onclick="toggle(x, 'zeus')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/zuus_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="lina" onclick="toggle(x, 'lina')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/lina_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="shadow_shaman" onclick="toggle(x, 'shadow_shaman')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/shadow_shaman_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="tinker" onclick="toggle(x, 'tinker')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/tinker_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="natures_prophet" onclick="toggle(x, 'natures_prophet')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/furion_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="enchantress" onclick="toggle(x, 'enchantress')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/enchantress_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="jakiro" onclick="toggle(x, 'jakiro')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/jakiro_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="chen" onclick="toggle(x, 'chen')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/chen_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="silencer" onclick="toggle(x, 'silencer')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/silencer_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="ogre_magi" onclick="toggle(x, 'ogre_magi')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/ogre_magi_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="rubick" onclick="toggle(x, 'rubick')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/rubick_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="disruptor" onclick="toggle(x, 'disruptor')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/disruptor_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="keeper_of_the_light" onclick="toggle(x, 'keeper_of_the_light')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/keeper_of_the_light_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="skywrath_mage" onclick="toggle(x, 'skywrath_mage')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/skywrath_mage_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="oracle" onclick="toggle(x, 'oracle')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/oracle_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="techies" onclick="toggle(x, 'techies')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/techies_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="dark_willow" onclick="toggle(x, 'dark_willow')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/dark_willow_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="void_spirit" onclick="toggle(x, 'void_spirit')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/void_spirit_hphover.png?v=6324670">
-      </div>
-      <div class="card "><img class="filler tog" id="bane" onclick="toggle(x, 'bane')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/bane_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="lich" onclick="toggle(x, 'lich')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/lich_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="lion" onclick="toggle(x, 'lion')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/lion_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="witch_doctor" onclick="toggle(x, 'witch_doctor')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/witch_doctor_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="enigma" onclick="toggle(x, 'enigma')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/enigma_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="necrophos" onclick="toggle(x, 'necrophos')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/necrolyte_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="warlock" onclick="toggle(x, 'warlock')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/warlock_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="queen_of_pain" onclick="toggle(x, 'queen_of_pain')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/queenofpain_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="death_prophet" onclick="toggle(x, 'death_prophet')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/death_prophet_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="pugna" onclick="toggle(x, 'pugna')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/pugna_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="dazzle" onclick="toggle(x, 'dazzle')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/dazzle_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="leshrac" onclick="toggle(x, 'leshrac')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/leshrac_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="dark_seer" onclick="toggle(x, 'dark_seer')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/dark_seer_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="batrider" onclick="toggle(x, 'batrider')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/batrider_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="ancient_apparition" onclick="toggle(x, 'ancient_apparition')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/ancient_apparition_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="invoker" onclick="toggle(x, 'invoker')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/invoker_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="outworld_destroyer" onclick="toggle(x, 'outworld_destroyer')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/obsidian_destroyer_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="shadow_demon" onclick="toggle(x, 'shadow_demon')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/shadow_demon_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="visage" onclick="toggle(x, 'visage')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/visage_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="winter_wyvern" onclick="toggle(x, 'winter_wyvern')"
-          style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/winter_wyvern_hphover.png">
-      </div>
-      <div class="card "><img class="filler tog" id="grimstroke" onclick="toggle(x, 'grimstroke')" style="opacity: 1;"
-          src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/grimstroke_hphover.png">
-      </div>
-
-    </section>
-  </div>
-</section>
-  <section class="main-grid">
-    <div></div>
-    <div class="bot">
-        <p>v 1.2.5 ✨<a href=""></a></p>
     </div>
-    <div></div>
-   </section>
-  </div>
 
-  <script>
-    var picked, heroList, allHeroList;
-    var time = 0;
+    <section class="main-grid">
+        <div></div>
+        <div id="content">
+            <div class="top">
+                <p class="top-p">Let us provide</p>
+                <div class="outputTitle" id="output">graphic design solutions for your business or charity</div>
+                <p>From interpretation displays, to expressive media strategies and beyond. We are National Trust suppliers with a passion for sustainable design.</p>
+                <!--<a onclick="doodoo()" id="pick" class="link">random ✔️</a>-->
+            </div>
+            <div class="tab">
+                <button class="tablinks left" onclick="openTab(event, 'watercolour')"
+                    style="background-image: url(images/brushes.jpg); background-size: cover; background-position: 65%;">
+                    <div class="tablink-text-bg">
+                        <span>Watercolour</span>
+                    </div>
+                </button>
+                <button class="tablinks mid" onclick="openTab(event, 'computer')"
+                    style="background-image: url(images/computer.jpg); background-size: cover; background-position: 55%;">
+                    <div class="tablink-text-bg">
+                        <span>Computer illustration</span>
+                    </div>
+                </button>
+                <button class="tablinks right" onclick="openTab(event, 'simple')"
+                    style="background-image: url(images/simple.jpg); background-size: cover; background-position: 78%;">
+                    <div class="tablink-text-bg">
+                        <span>Simple layouts</span>
+                    </div>
+                </button>
+            </div>
+        </section>
+        <section class="second-grid">
+            <div id="watercolour" class="tabcontent">
 
-    function doodoo() {
-      var time = 0;
-      for (i = 0; i < 7; i++) {
-        var heroList = document.getElementsByClassName("tog");
-        let picked = heroList[Math.floor(Math.random() * heroList.length + i)];
-        time = time + 150;
-        timeoutID = setTimeout(function () { document.getElementById('output').innerHTML = picked.id; }, time);
-      }
-    }
+                <section class="hero-grid">
+                    <div class="card panel">
+                        <img class="filler" src="images/margins-sign.jpg">
+                    </div>
+                    <div class="card panel tall-panel">
+                        <img class="filler" src="images/Watersmeet_Wood_Pasture_Meat_Poster.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel tall-panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                </section>
+            </div>
 
-    function toggle(x, heroName) {
-      var hero;
-      hero = document.getElementById(heroName);
-      if (document.getElementById(heroName).style.opacity === "1") {
-        document.getElementById(heroName).style.opacity = ".3";
-        document.getElementById(heroName).className = document.getElementById(heroName).className.replace(" tog", "");
-      } else {
-        document.getElementById(heroName).style.opacity = "1"
-        document.getElementById(heroName).className += " tog";
-      }
-    }
+            <div id="computer" class="tabcontent">
 
-    function selectAll() {
-        var allHeroList = document.getElementsByClassName("filler");
-        var cycle = allHeroList.length;
-        for (var i = 0; i < cycle; i++) {
-            if (allHeroList[i].className !== "filler tog"){
-                allHeroList[i].style.opacity = "1"
-                allHeroList[i].className += " tog";
+                <section class="hero-grid">
+                    <div class="card panel">
+                        <img class="filler" src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler" src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel tall-panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel tall-panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                </section>
+            </div>
+
+            <div id="simple" class="tabcontent">
+
+                <section class="hero-grid">
+                    <div class="card panel tall-panel">
+                        <img class="filler" src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler" src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel tall-panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/white.png">
+                    </div>
+                </section>
+            </div>
+        </section>
+    <section class="main-grid">
+        <div></div>
+        <div class="bot-null">
+        </div>
+        <div></div>
+    </section>
+
+
+    <div class="loader-wrapper">
+        <span class="loader">
+            <span class="loader-inner">
+                <span class="loader-dot"></span>
+            </span>
+        </span>
+
+    </div>
+    </div>
+    <script>
+
+        $(window).on("load", function () {
+            $(".loader-wrapper").fadeOut("slow");
+        });
+
+        window.ondragstart = function () { return false }
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            if (document.getElementById(tabName).style.display === "block") {
+                document.getElementById(tabName).style.display = "none";
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            } else {
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+        }
+
+
+        var picked, heroList;
+        var time = 0;
+
+        function doodoo() {
+            var time = 0;
+            for (i = 0; i < 7; i++) {
+                var heroList = document.getElementsByClassName("tog");
+                let picked = heroList[Math.floor(Math.random() * heroList.length + i)];
+                time = time + 150;
+                timeoutID = setTimeout(function () { document.getElementById('output').innerHTML = picked.id; }, time);
             }
         }
-    }
 
-    function deselectAll() {
-        var allHeroList = document.getElementsByClassName("filler");
-        var cycle = allHeroList.length;
-        for (var i = 0; i < cycle; i++) {
-            if (allHeroList[i].style.opacity === "1"){
-                allHeroList[i].style.opacity = ".3"
-                allHeroList[i].className = allHeroList[i].className.replace(" tog", "");
+        function toggle(x, heroName) {
+            var hero;
+            hero = document.getElementById(heroName);
+            if (document.getElementById(heroName).style.opacity === "1") {
+                document.getElementById(heroName).style.opacity = ".3";
+                document.getElementById(heroName).className = document.getElementById(heroName).className.replace(" tog", "");
+            } else {
+                document.getElementById(heroName).style.opacity = "1"
+                document.getElementById(heroName).className += " tog";
             }
         }
-    }
-
-    function closewindow() {
-            $('.cookies').fadeToggle();
-        }
-  </script>
-  </div>
-  </div>
+    </script>
+    </div>
+    </div>
 </body>
 
 </html>
