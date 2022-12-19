@@ -87,65 +87,56 @@
             </div>
         </section>
         <section class="second-grid">
-            <div id="watercolour" class="tabcontent">
+            <div id="watercolour" class="tabcontent tabshow">
 
                 <section class="hero-grid">
                     <div class="card panel">
-                        <img class="filler" src="images/white.png">
+                        <img class="filler" src="images/1.jpg">
                     </div>
                     <div class="card panel tall-panel">
-                        <img class="filler" src="images/white.png">
+                        <img class="filler" src="images/2.png">
+                    </div>
+                    <div class="card panel tall-panel">
+                        <img class="filler " src="images/3.jpg">
                     </div>
                     <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
+                        <img class="filler" src="images/4.png">
                     </div>
                 </section>
             </div>
 
-            <div id="computer" class="tabcontent">
+            <div id="computer" class="tabcontent tabshow">
 
                 <section class="hero-grid">
-                    <div class="card panel">
-                        <img class="filler" src="images/white.png">
+                    <div class="card panel tall-panel">
+                        <img class="filler" src="images/5.jpg">
                     </div>
                     <div class="card panel">
-                        <img class="filler" src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
+                        <img class="filler" src="images/6.jpg">
                     </div>
                     <div class="card panel tall-panel">
-                        <img class="filler " src="images/white.png">
+                        <img class="filler " src="images/7.jpg">
                     </div>
                     <div class="card panel">
-                        <img class="filler " src="images/white.png">
+                        <img class="filler " src="images/8.jpg">
                     </div>
                 </section>
             </div>
 
-            <div id="simple" class="tabcontent">
+            <div id="simple" class="tabcontent tabshow">
 
                 <section class="hero-grid">
                     <div class="card panel tall-panel">
-                        <img class="filler" src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler" src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
-                    </div>
-                    <div class="card panel">
-                        <img class="filler " src="images/white.png">
+                        <img class="filler" src="images/9.jpg">
                     </div>
                     <div class="card panel tall-panel">
-                        <img class="filler " src="images/white.png">
+                        <img class="filler" src="images/10.png">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/8.jpg">
+                    </div>
+                    <div class="card panel">
+                        <img class="filler " src="images/11.png">
                     </div>
                 </section>
             </div>
@@ -175,18 +166,13 @@
         </div>
         <div></div>
     </section>
-    <div class="about-us">
+    <div class="about">
         <div class="about-picture"></div>
         <div class="top-p">About Us</div>
         <p style="text-align: center;">👋 <b>Hi there!</b> Our team is based on the beautiful North Devon coastline. The inspiration for our work is from both modern and classic design principles, and <b>we'd love to work with you on your next project.🎉</b></p>
     </div>
     <div class="footer">
-        <div class="footer-links">
-            <a class="foot-links-text" href="Home">Home</a>
-            <a class="foot-links-text" href="Gallery">Gallery</a>
-            <a class="foot-links-text" href="Contact">Contact</a>
-        </div>
-        <div class="footer-copyright"><p class="footer-copyright-text">This website and its content is copyright of Edistone Design - © Edistone Design 2022. All rights reserved. Check out <a href="https://www.randomherogenerator.com/" target="_blank">Random Hero Generator</a></p></div>
+        <div class="footer-copyright"><p class="footer-copyright-text">This website and its content is the copyright of Edistone Design - © Edistone Design 2022. All rights reserved. Check out - <a class="foot-links-text" href="https://www.randomherogenerator.com/" target="_blank">Random Hero Generator</a></p></div>
     </div>
 
 
@@ -284,6 +270,23 @@
             })
             $(document).mousedown(function (e) {
                 var container = $("#contactForm");
+
+                if (!container.is(e.target)
+                    && container.has(e.target).length === 0)
+                {
+                    container.fadeOut();
+                }
+                });
+            });
+
+        function tabgroupfade() {
+            $('.tabcontent').fadeToggle();
+        }
+
+        $(function() {
+            $(document).mousedown(function (e) {
+                var container = $(".tabcontent");
+                var butt = $(".contact");
 
                 if (!container.is(e.target)
                     && container.has(e.target).length === 0)
