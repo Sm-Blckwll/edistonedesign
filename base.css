@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 :root {
-  --accent-color-light: #e9dbc5;
-  --accent-color: #d3c5ae;
-  --accent-color-dark: #c0b29b;
+  --accent-color-light: #cccccc;
+  --accent-color: #4d4d4d;
+  --accent-color-dark: #1d1d1d;
 }
 
 body::-webkit-scrollbar {
@@ -147,29 +147,27 @@ span {
   max-width: fit-content;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  color: rgb(0, 0, 0);
-  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
-    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-  height: 100%;
+.wrapper-main {
+  margin: 0 auto;
+  padding: 0;
   width: 100%;
-  border-radius: 4px;
-  transition: all 500ms;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  max-width: 1800px;
+  min-height: 100%;
+  background: #ffffff;
+  margin-bottom: 3rem;
 }
 
-.card:hover {
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
-    rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-  transform: translateY(-3px) scale(1.05);
+.portfolio-grid {
+  margin: 0 auto;
+}
+
+.card {
+  width: 300px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
 }
 
 .top {
@@ -179,9 +177,9 @@ span {
 }
 
 .bot {
-  margin-top: 4rem;
+  margin-top: .5rem;
   margin-left: 0rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .link {
@@ -419,6 +417,7 @@ small {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
 
 .emoji {
@@ -504,7 +503,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f3efea;
+  background-color: var(--accent-color);
   margin: 2rem auto 0rem auto;
   padding: 4rem 1rem 6rem 1rem;
   border-radius: 4px;
@@ -529,7 +528,7 @@ textarea {
 }
 
 .footer {
-  background-color: #D3C5AE;
+  background-color: var(--accent-color-dark);
   color: #f7f7ff;
   text-align: center;
   padding-top: .5rem;
