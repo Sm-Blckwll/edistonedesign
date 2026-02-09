@@ -2,292 +2,128 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Edistone Design, a creative design agency and National Trust supplier.">
-    <meta name="keywords" content="Design, Edistone, National Trust supplier, graphics, illustration.">
-    <title>Edistone Design</title>
-    <header Content-Security-Policy-Report-Only: default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'></header>
-    <style>
-        @import url('./base.css');
-        @import url('./hero-grid.css');
-    </style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edistone — Creative Direction</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
 
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("H66KIGNHU4VVEVtMD");
-        })();
-    </script>
-
-
-
-    <script>
-        if ("serviceWorker" in navigator) {
-            // register service worker
-            navigator.serviceWorker.register("service-worker.js")
-                .then(function (registration) {
-                    console.log("success load");
-                })
-                .catch(function (err) {
-                    console.log(err);
-                });
-        }
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="loader-wrapper">
-        <div id="loader"></div>
 
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+        style="position:fixed; top:0; left:0; z-index:-1; pointer-events:none; background:rgb(234, 234, 234);">
+        <defs>
+            <filter id="topo1" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="4" seed="12" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="150" xChannelSelector="R"
+                    yChannelSelector="G" />
+            </filter>
 
-    </div>
-    <div class="cookies"><div class="emoji-small">🍪 </div><div class="cookies-text">This site uses cookies for core functionality only - We do not store any user data.</div><div class="close" onclick="closewindow()">X</div></div>
-    <div class="wrapper-main">
-    <section class="main-grid">
-        <div></div>
-        <div id="content">
-            <div class="top">
-                <p class="top-p">Let us provide you with</p>
-                <div class="outputTitle" id="output">graphic design solutions for your business or charity</div>
-                <p>From interpretation displays, to expressive media strategies and beyond. We are National Trust suppliers with a passion for sustainable design.</p>
-            </div>
-        </section>
-        
-        <section class="main-grid">
-            <div></div>
-            <div class="bot" id="content">
-                
-                <div class="bot-null">
-                    <div class="contact" id="contact">Contact</div>
-                        <div id="contactForm">
-                        <h1>Tell us about your project</h1>
-                        <small>I'll get back to you as quickly as possible</small>
-                        <form id="form">
-                            <input name="user_name" id="user_name" placeholder="Name" type="text" required oninvalid="this.setCustomValidity('Please enter your name')" oninput="setCustomValidity('')"/>
-                            <input name="user_email" id="user_email" placeholder="Email" type="email" required oninvalid="this.setCustomValidity('Please enter valid email')" oninput="setCustomValidity('')"/>
-                            <input name="user_subject" id="user_subject" placeholder="Subject" type="text" required oninvalid="this.setCustomValidity('Please enter an email subject')" oninput="setCustomValidity('')"/>
-                            <textarea name="message" id="message" placeholder="Message"></textarea>
-                            <input class="formBtn" id="button" type="submit" value="Send Email"/>
-                        </form>
-                        <span class="close-popup" onclick="popup()">X</span>
-                        </div>
-                        <div class="banner"><h1 class="emoji">📨</h1><h1>Email sent!</h1><small>We look forward to working with you.</small></div>
+            <filter id="topo2" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="5" seed="42" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="120" xChannelSelector="R"
+                    yChannelSelector="G" />
+            </filter>
+
+            <g id="circles">
+                <circle cx="50%" cy="50%" r="5%" />
+                <circle cx="50%" cy="50%" r="15%" />
+                <circle cx="50%" cy="50%" r="25%" />
+                <circle cx="50%" cy="50%" r="35%" />
+                <circle cx="50%" cy="50%" r="45%" />
+                <circle cx="50%" cy="50%" r="55%" />
+            </g>
+        </defs>
+
+        <use href="#circles" x="-20%" y="-20%" fill="none" stroke="#222" stroke-width="1" filter="url(#topo1)"
+            opacity="0.6" />
+
+        <use href="#circles" x="20%" y="25%" fill="none" stroke="#1a1a1a" stroke-width="1" filter="url(#topo2)"
+            opacity="0.4" />
+
+        <use href="#circles" x="5%" y="-10%" fill="none" stroke="#222" stroke-width="0.5" filter="url(#topo1)"
+            opacity="0.3" />
+    </svg>
+
+    <div class="noise-overlay"></div>
+    <div class="vignette-overlay"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <nav class="ui-layer">
+        <div class="logo">ED</div>
+        <div class="meta">
+            <span class="location">London, UK</span>
+            <span class="time" id="clock">10:00 AM</span>
+        </div>
+        <!--<div class="menu-trigger magnetic">Menu</div>-->
+    </nav>
+
+    <main class="stage">
+
+        <div class="card-stack">
+            <div class="word-clipper">
+            <span class="dynamic-word">Art</span>
+        </div>
+            <div class="card" data-index="3" data-title="Art" data-category="Brand Strategy">
+                <div class="card-inner">
+                    <img src="images/art.png" alt="">
                 </div>
             </div>
-            <div></div>
-        </section>
-        
-            
 
-                <section class="portfolio-grid">
-                    <div class="card">
-                        <img class="landscape" src="images/1.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="portrait" src="images/2.png">
-                    </div>
-                    <div class="card">
-                        <img class="portrait " src="images/3.png">
-                    </div>
-                    <div class="card">
-                        <img class="landscape" src="images/4.png">
-                    </div>
-                
-            
-
-            
-
-                
-                    <div class="card">
-                        <img class="portrait" src="images/5.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="landscape" src="images/6.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="portrait" src="images/7.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="landscape" src="images/8.jpg">
-                    </div>
-                
-            
-
-            
-
-                
-                    <div class="card">
-                        <img class="portrait" src="images/9.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="portrait" src="images/10.png">
-                    </div>
-                    <div class="card">
-                        <img class="landscape" src="images/11.jpg">
-                    </div>
-                    <div class="card">
-                        <img class="landscape" src="images/12.jpg">
-                    </div>
-                </section>
+            <div class="card" data-index="2" data-title="Mapping" data-category="Web Experience">
+                <div class="card-inner">
+                    <img src="images/mapping.png" alt="">
+                </div>
             </div>
+
+            <div class="card" data-index="1" data-title="Drone" data-category="Spatial Design">
+                <div class="card-inner">
+                    <img src="images/drone.png" alt="">
+                </div>
+            </div>
+
+            <div class="card active" data-index="0" data-title="Data analysis" data-category="Art Direction">
+                <div class="card-inner">
+                    <img src="images/data.png" alt="">
+                </div>
+            </div>
+        </div>
+
         
 
-    
-    <!--<div class="about">
-        <div class="about-picture"></div>
-        <div class="top-p">About Us</div>
-        <p style="text-align: center;">👋 <b>Hi there!</b> Our team is based on the beautiful North Devon coastline. The inspiration for our work is from both modern and classic design principles, and <b>we'd love to work with you on your next project.🎉</b></p>
-    </div>-->
-    <div class="footer">
-        <div class="footer-copyright"><p class="footer-copyright-text">This website and its content is the copyright of Edistone Design - © Edistone Design 2024. All rights reserved. Check out - <a class="foot-links-text" href="https://www.randomherogenerator.com/" target="_blank">Random Hero Generator</a></p></div>
-    </div>
+        <div class="text-layer">
 
+            <div class="intro-line">
+                <!--<span class="label">For your next</span>-->
 
+                <!--<span class="label">project</span>-->
+            </div>
 
+            <h1 class="main-title">
+                <span class="line">Edistone</span>
+                <span class="line">Design</span>
+            </h1>
 
+            <div class="footer-meta">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="counter">01 / 04</div>
+            </div>
+        </div>
 
+    </main>
 
-
-    <div class="loader-wrapper">
-        <span class="loader">
-            <span class="loader-inner">
-                <span class="loader-dot"></span>
-            </span>
-        </span>
-
-    </div>
-    </div>
-
-
-    <script>
-        var elem = document.querySelector('.portfolio-grid');
-        var msnry = new Masonry( elem, {
-          // options
-          itemSelector: '.card',
-          columnWidth: 300,
-          fitWidth: true,
-          gutter: 5
-        });
-      </script>
-
-    <script type="text/javascript">
-        const sent = 1;
-        const btn = document.getElementById('button');
-
-        document.getElementById('form')
-        .addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        btn.value = 'Sending...';
-        var sent = 0
-        setTimeout(function () {$('.banner').fadeToggle();}, 800);
-
-        const serviceID = 'default_service';
-        const templateID = 'contact_form';
-
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-            btn.value = 'Send Email';
-            }, (err) => {
-            btn.value = 'Send Email';
-            alert(JSON.stringify(err));
-            });
-        });
-            $(document).mousedown(function (e) {
-                var container = $(".banner");
-
-                if (!container.is(e.target)
-                    && container.has(e.target).length === 0)
-                {
-                    container.fadeOut();
-                }
-                });
-    </script>
-    <script>
-
-        $(window).on("load", function () {
-            $(".loader-wrapper").fadeOut("slow");
-        });
-
-        window.ondragstart = function () { return false }
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            if (document.getElementById(tabName).style.display === "block") {
-                document.getElementById(tabName).style.display = "none";
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            } else {
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                document.getElementById(tabName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-
-        }
-
-        function closewindow() {
-            $('.cookies').fadeToggle();
-        }
-
-        function popup() {
-            $('#contactForm').fadeToggle();
-        }
-
-        $(function() {
-            $('#contact').click(function() {
-                $('#contactForm').fadeToggle();
-            })
-            $(document).mousedown(function (e) {
-                var container = $("#contactForm");
-
-                if (!container.is(e.target)
-                    && container.has(e.target).length === 0)
-                {
-                    container.fadeOut();
-                }
-                });
-            });
-
-        function tabgroupfade() {
-            $('.tabcontent').fadeToggle();
-        }
-
-        $(function() {
-            $(document).mousedown(function (e) {
-                var container = $(".tabcontent");
-                var butt = $(".contact");
-
-                if (!container.is(e.target)
-                    && container.has(e.target).length === 0)
-                {
-                    container.fadeOut();
-                }
-                });
-            });
-    </script>
-    </div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
